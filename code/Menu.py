@@ -2,7 +2,7 @@ import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import WIN_WIDTH, MENU_OPTION, C_WHITE, C_YELLOW, C_BLACK
+from code.Const import WIN_WIDTH, MENU_OPTION, C_BRANCO, C_AMARELO, C_PRETO
 
 
 class Menu:
@@ -17,14 +17,14 @@ class Menu:
         pygame.mixer_music.play(-1)
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(60, "TANK", C_BLACK, ((WIN_WIDTH / 2), 70))
-            self.menu_text(60, "WARS", C_BLACK, ((WIN_WIDTH / 2), 120))
+            self.menu_text(60, "BATALHA", C_PRETO, ((WIN_WIDTH / 2), 70))
+            self.menu_text(60, "SUBMARINA", C_PRETO, ((WIN_WIDTH / 2), 120))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(20, MENU_OPTION[i], C_YELLOW, ((WIN_WIDTH / 2), 200 + 25 * i))
+                    self.menu_text(20, MENU_OPTION[i], C_AMARELO, ((WIN_WIDTH / 2), 200 + 25 * i))
                 else:
-                    self.menu_text(20, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 200 + 25 * i))
+                    self.menu_text(20, MENU_OPTION[i], C_BRANCO, ((WIN_WIDTH / 2), 200 + 25 * i))
             pygame.display.flip()
 
             for event in pygame.event.get():

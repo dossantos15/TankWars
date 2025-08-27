@@ -1,9 +1,9 @@
 import random
 
-from code.Background import Background
+from code.Fundo import Fundo
 from code.Const import WIN_WIDTH, WIN_HEIGHT
-from code.Enemy import Enemy
-from code.Player import Player
+from code.Inimigos import Inimigos
+from code.Jogadores import Jogadores
 
 
 class EntityFactory:
@@ -13,21 +13,21 @@ class EntityFactory:
         match entity_name:
             case 'Level1Bg':
                 list_bg = []
-                for i in range(7):
-                    list_bg.append(Background(f'Level1Bg{i}', (0,0)))
-                    list_bg.append(Background(f'Level1Bg{i}', (WIN_WIDTH,0)))
+                for i in range(6):
+                    list_bg.append(Fundo(f'Level1Bg{i}', (0, 0)))
+                    list_bg.append(Fundo(f'Level1Bg{i}', (WIN_WIDTH, 0)))
                 return list_bg
             case 'Level2Bg':
                 list_bg = []
                 for i in range(5):
-                    list_bg.append(Background(f'Level2Bg{i}', (0,0)))
-                    list_bg.append(Background(f'Level2Bg{i}', (WIN_WIDTH,0)))
+                    list_bg.append(Fundo(f'Level2Bg{i}', (0, 0)))
+                    list_bg.append(Fundo(f'Level2Bg{i}', (WIN_WIDTH, 0)))
                 return list_bg
-            case 'Player1':
-                return Player('Player1', (10, WIN_HEIGHT / 2 - 30))
-            case 'Player2':
-                return Player('Player2', (10, WIN_HEIGHT / 2 + 30))
-            case 'Enemy1':
-                return Enemy('Enemy1', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
-            case 'Enemy2':
-                return Enemy('Enemy2', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
+            case 'Jogador1':
+                return Jogadores('Jogador1', (10, WIN_HEIGHT / 2 - 30))
+            case 'Jogador2':
+                return Jogadores('Jogador2', (10, WIN_HEIGHT / 2 + 30))
+            case 'Inimigo1':
+                return Inimigos('Inimigo1', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
+            case 'Inimigo2':
+                return Inimigos('Inimigo2', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
