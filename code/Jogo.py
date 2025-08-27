@@ -20,10 +20,10 @@ class Jogo:
 
             if menu_return in [MENU_OPTION[0], MENU_OPTION[1], MENU_OPTION[2]]:
                 jogador_ponto = [0, 0]
-                nivel = Nivel(self.window, 'Level1', menu_return, jogador_ponto)
+                nivel = Nivel(self.window, 'Nivel1', menu_return, jogador_ponto)
                 nivel_return = nivel.run(jogador_ponto)
                 if nivel_return:
-                    nivel = Nivel(self.window, 'Level2', menu_return, jogador_ponto)
+                    nivel = Nivel(self.window, 'Nivel2', menu_return, jogador_ponto)
                     nivel_return = nivel.run(jogador_ponto)
                     if nivel_return:
                         ponto.save(menu_return, jogador_ponto)
