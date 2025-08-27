@@ -2,20 +2,20 @@ import sqlite3
 
 
 class DBProxy:
-    def __init__(self, db_nome: str):
-        self.db_nome = db_nome
-        self.connection = sqlite3. connect(db_nome)
+    def __init__(self, db_name: str):
+        self.db_name = db_name
+        self.connection = sqlite3. connect(db_name)
         self.connection.execute('''
                                     CREATE TABLE IF NOT EXISTS dados(
                                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                    nome TEXT NOT NULL,
+                                    name TEXT NOT NULL,
                                     ponto INTEGER NOT NULL,
                                     data TEXT NOT NULL)
                                 '''
                                 )
 
     def save(self, ponto_dict: dict):
-        self.connection.execute('INSERT INTO dados (nome, ponto, data) VALUES (:nome, :ponto, :data)', ponto_dict)
+        self.connection.execute('INSERT INTO dados (name, ponto, data) VALUES (:name, :ponto, :data)', ponto_dict)
         self.connection.commit()
 
     def retrieve_top10(self) -> list:

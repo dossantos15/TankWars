@@ -8,4 +8,4 @@ class JogadorTiro(Entity):
         super().__init__(nome, position)
 
     def move(self, ):
-        self.rect.centerx += ENTITY_SPEED[self.nome]
+        self.rect.centerx += ENTITY_SPEED[self.name]

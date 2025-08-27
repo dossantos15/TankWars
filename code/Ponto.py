@@ -47,7 +47,7 @@ class Ponto:
                     sys.exit()
                 elif event.type == KEYDOWN:
                     if event.key == K_RETURN and len(name) == 4:
-                        db_proxy.save({'name': name, 'ponto' : ponto, 'date' : get_formatted_date()})
+                        db_proxy.save({'name': name, 'ponto' : ponto, 'data' : get_formatted_date()})
                         self.show()
                         return
                     elif event.key == K_BACKSPACE:

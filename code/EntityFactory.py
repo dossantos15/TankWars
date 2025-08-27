@@ -11,17 +11,17 @@ class EntityFactory:
     @staticmethod
     def get_entity(entity_name: str):
         match entity_name:
-            case 'Level1Bg':
+            case 'Nivel1Bg':
                 list_bg = []
                 for i in range(6):
-                    list_bg.append(Fundo(f'Level1Bg{i}', (0, 0)))
-                    list_bg.append(Fundo(f'Level1Bg{i}', (WIN_WIDTH, 0)))
+                    list_bg.append(Fundo(f'Nivel1Bg{i}', (0, 0)))
+                    list_bg.append(Fundo(f'Nivel1Bg{i}', (WIN_WIDTH, 0)))
                 return list_bg
-            case 'Level2Bg':
+            case 'Nivel2Bg':
                 list_bg = []
                 for i in range(5):
-                    list_bg.append(Fundo(f'Level2Bg{i}', (0, 0)))
-                    list_bg.append(Fundo(f'Level2Bg{i}', (WIN_WIDTH, 0)))
+                    list_bg.append(Fundo(f'Nivel2Bg{i}', (0, 0)))
+                    list_bg.append(Fundo(f'Nivel2Bg{i}', (WIN_WIDTH, 0)))
                 return list_bg
             case 'Jogador1':
                 return Jogadores('Jogador1', (10, WIN_HEIGHT / 2 - 30))
